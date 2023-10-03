@@ -1,16 +1,3 @@
-type Message = record {
-  id : text;
-  attachmentURL : text;
-  title : text;
-  body : text;
-  createdAt : nat64;
-  updatedAt : opt nat64;
-};
-type MessagePayload = record {
-  attachmentURL : text;
-  title : text;
-  body : text;
-};
 type Post = record {
   title : text;
   post_id : text;
@@ -21,6 +8,7 @@ type Post = record {
   story_id : text;
 };
 type Story = record {
+  title : text;
   main : text;
   createdAt : nat64;
   user : text;
@@ -30,27 +18,20 @@ type Story = record {
   story_id : text;
 };
 type User = record { name : text; post : text; user_id : text; profile : text };
-type _AzleResult = variant { Ok : Message; Err : text };
-type _AzleResult_1 = variant { Ok : Post; Err : text };
-type _AzleResult_2 = variant { Ok : User; Err : text };
-type _AzleResult_3 = variant { Ok : Story; Err : text };
-type _AzleResult_4 = variant { Ok : vec Message; Err : text };
-type _AzleResult_5 = variant { Ok : vec Post; Err : text };
-type _AzleResult_6 = variant { Ok : vec Story; Err : text };
-type _AzleResult_7 = variant { Ok : vec User; Err : text };
+type _AzleResult = variant { Ok : Post; Err : text };
+type _AzleResult_1 = variant { Ok : User; Err : text };
+type _AzleResult_2 = variant { Ok : Story; Err : text };
+type _AzleResult_3 = variant { Ok : vec Post; Err : text };
+type _AzleResult_4 = variant { Ok : vec Story; Err : text };
+type _AzleResult_5 = variant { Ok : vec User; Err : text };
 service : () -> {
-  addMessage : (MessagePayload) -> (_AzleResult);
-  addPost : (Post) -> (_AzleResult_1);
-  addUser : (User) -> (_AzleResult_2);
-  createStory : (Story) -> (_AzleResult_3);
-  deleteMessage : (text) -> (_AzleResult);
-  getMessage : (text) -> (_AzleResult) query;
-  getMessages : () -> (_AzleResult_4) query;
-  getPosts : (text) -> (_AzleResult_5) query;
-  getSinglePost : (text) -> (_AzleResult_1) query;
-  getSingleStory : (text) -> (_AzleResult_3) query;
-  getSingleUser : (text) -> (_AzleResult_2) query;
-  getStories : () -> (_AzleResult_6) query;
-  getUsers : () -> (_AzleResult_7) query;
-  updateMessage : (text, MessagePayload) -> (_AzleResult);
+  addPost : (Post) -> (_AzleResult);
+  addUser : (User) -> (_AzleResult_1);
+  createStory : (Story) -> (_AzleResult_2);
+  getPosts : (text) -> (_AzleResult_3) query;
+  getSinglePost : (text) -> (_AzleResult) query;
+  getSingleStory : (text) -> (_AzleResult_2) query;
+  getSingleUser : (text) -> (_AzleResult_1) query;
+  getStories : () -> (_AzleResult_4) query;
+  getUsers : () -> (_AzleResult_5) query;
 }

@@ -10,7 +10,7 @@ type formData={
 const Create = () => {
 
 
-    const {register, formState:{errors}, handleSubmit } = useForm({
+    const {register, formState:{errors}, handleSubmit, reset } = useForm({
         defaultValues:{
             title:"",
             story:"",
@@ -45,6 +45,7 @@ const Create = () => {
         const data = await backend.createStory({
             main:formData.story,
              mainImage:uploadImage,
+             title:formData.title,
             story: [],
             user:'1',
           createdAt,
@@ -56,6 +57,7 @@ const Create = () => {
 
         })
 
+        reset();
         console.log(data);
         toast.success("Story created successfully")
       } catch (error) {
@@ -68,7 +70,7 @@ const Create = () => {
     
     <div className="">
         <h1 className='text-4xl text-center'>
-            Create
+            Create your own story
         </h1>
         
         <form className='flex m-10 flex-col items-start gap-24' onSubmit={handleSubmit(formSubmit)}>

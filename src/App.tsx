@@ -13,6 +13,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
+import SingleStory from './components/SingleStory';
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
       <Route path="/" element={<Login/>} />
       <Route path="/home" element={<Home/>} />
       <Route path="/story" element={<Story/>} />
+      <Route path="/story/:id" element={<SingleStory/>} />
       <Route path="/profile" element={<Profile/>}/>
       <Route path="/create" element={<Create/>}/>
     </Routes>

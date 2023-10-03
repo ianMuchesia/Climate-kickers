@@ -26,11 +26,11 @@ const DesktopNavbar = () => {
 			</ol>
       <FadeDown delay={0.75}>
 
-      
+{/*       
       <button
           className="py-2 px-[50px] text-sm bg-black-500 border rounded-lg border-black-300 hover:bg-black-400 transition duration-300 ease-in-out"
           
-        >Contact Me</button>
+        >Contact Me</button> */}
         </FadeDown>
       </div>
   )

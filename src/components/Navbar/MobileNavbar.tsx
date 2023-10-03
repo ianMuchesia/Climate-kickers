@@ -12,7 +12,7 @@ const { pageSections } = data;
 
 
 const sideBarStyles =
-	"fixed z-40 flex md:hidden right-0 top-0 h-screen bg-black-600 w-[75vw] max-w-[400px] py-[50px] px-[10px] justify-center items-center transition-all duration-500 ease-in-out mobile-links";
+	"fixed z-40 flex md:hidden right-0 top-0 h-screen bg-white w-[75vw] max-w-[400px] py-[50px] px-[10px] justify-center items-center transition-all duration-500 ease-in-out mobile-links";
 
 const overLayStyles = "fixed inset-0 bg-black/30 md:hidden min-h-screen";
 
@@ -38,13 +38,10 @@ const MobileNavbar = ({onToggleMenu, isMenuOpen}:Props) => {
                 name={section}
                 onClick={onToggleMenu}
               />
-            </li>
+            </li> 
           ))}
         </ol>
-        <button
-          className="py-4 px-[50px] text-sm bg-black-500"
-          
-        >Contact Me</button>
+       
       </nav>
     </aside>
   </>

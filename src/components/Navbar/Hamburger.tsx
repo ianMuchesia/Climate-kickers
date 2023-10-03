@@ -8,7 +8,7 @@ interface Props{
 
 
 const lineStyles = {
-	all: "h-[2px] bg-blue-500 rounded-md transition-all ease-in-out duration-500 absolute",
+	all: "h-[2px] bg-green-500 rounded-md transition-all ease-in-out duration-500 absolute",
 	line1: "w-9 top-0 origin-center",
 	line2: "w-6 top-1/2 -translate-y-1/2",
 	line3: "w-9 bottom-0 origin-center",

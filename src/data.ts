@@ -1,5 +1,5 @@
 const data = {
-    pageSections: [ "profile","story", "create"]}
+    pageSections: [ "Home","profile","story", "create"]}
 
 
     export default data;
